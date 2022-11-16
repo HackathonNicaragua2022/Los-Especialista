@@ -12,6 +12,7 @@ public static class MauiProgram
         var Builder = MauiApp.CreateBuilder();
         Builder
             .UseMauiApp<App>()
+            .UseMauiMaps()
             .ConfigureFonts(Fonts =>
             {
                 Fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
