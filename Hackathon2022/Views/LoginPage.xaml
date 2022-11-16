@@ -21,7 +21,7 @@
                    HorizontalOptions="Center"
                    InputTransparent="True">
                 <Image.Behaviors>
-                    <Toolkit:IconTintColorBehavior TintColor="#FF021401" />
+                    <Toolkit:IconTintColorBehavior TintColor="{StaticResource Tertiary}" />
                 </Image.Behaviors>
             </Image>
 
