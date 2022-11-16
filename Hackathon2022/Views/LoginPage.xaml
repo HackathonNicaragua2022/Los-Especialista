@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Hackathon2022.Views.LoginPage">
+    <ContentPage.Background>
+        <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+            <GradientStop Color="{StaticResource Primary}" Offset="0.1" />
+            <GradientStop Color="{StaticResource Secondary}" Offset="1.0" />
+        </LinearGradientBrush>
+    </ContentPage.Background>
+    <ScrollView>
+        <VerticalStackLayout
+            Spacing="{StaticResource PageSpacing}"
+            VerticalOptions="Center">
+
+            <Image
+                Source="destiny_logo.jpeg"
+                Margin="0,-20,0,0"
+                VerticalOptions="Start"
+                HorizontalOptions="Center" />
+
+            <Label
+                Text="Destino"
+                SemanticProperties.HeadingLevel="Level1"
+                FontSize="32"
+                HorizontalOptions="Center" />
+
+            <Label
+                Text="Con vos a todas partes"
+                FontSize="18" HorizontalTextAlignment="Center"
+                HorizontalOptions="Fill" />
+
+            <Button
+                x:Name="RegisterButton"
+                Text="Regístrate"
+                HorizontalOptions="Center" />
+
+            <Button
+                x:Name="LoginButton"
+                Text="Inicia Sesión"
+                HorizontalOptions="Center" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

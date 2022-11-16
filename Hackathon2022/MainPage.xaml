@@ -16,22 +16,22 @@
                 HorizontalOptions="Center" />
 
             <Label
-                Text="Hello, World!"
+                Text="¡Hola!"
                 SemanticProperties.HeadingLevel="Level1"
                 FontSize="32"
                 HorizontalOptions="Center" />
 
             <Label
-                Text="Welcome to .NET Multi-platform App UI"
+                Text="Bienvenido a ¡Destino! tú aplicación de seguimiento en tiempo real"
+                FontSize="18" HorizontalTextAlignment="Center"
                 SemanticProperties.HeadingLevel="Level2"
-                SemanticProperties.Description="Welcome to dot net Multi platform App U I"
-                FontSize="18"
-                HorizontalOptions="Center" />
+                SemanticProperties.Description="Bienvenido a ¡Destino! tú aplicación de seguimiento en tiempo real"
+                HorizontalOptions="Fill" />
 
             <Button
-                x:Name="CounterBtn"
-                Text="Click me"
-                SemanticProperties.Hint="Counts the number of times you click"
+                x:Name="LoginNavegationButton"
+                Text="Inicia Sesión"
+                SemanticProperties.Hint="Navegación a la página de inicio de sesión"
                 Clicked="OnCounterClicked"
                 HorizontalOptions="Center" />
 
