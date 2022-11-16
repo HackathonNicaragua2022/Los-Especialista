@@ -3,6 +3,26 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:Toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
              x:Class="Hackathon2022.Views.HomePage">
+    <Shell.TitleView>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Image Source="icon_home.png"
+                   HeightRequest="25"
+                   HorizontalOptions="Start"
+                   VerticalOptions="Center"
+                   Grid.Column="0">
+                <Image.Behaviors>
+                    <Toolkit:IconTintColorBehavior TintColor="White" />
+                </Image.Behaviors>
+            </Image>
+
+            <Label Grid.Column="1" FontSize="24" TextColor="White" Margin="10,0,0,0" Text="Inicio" HorizontalOptions="Start" VerticalOptions="Center" />
+        </Grid>
+    </Shell.TitleView>
     <ContentPage.Background>
         <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
             <GradientStop Color="{StaticResource Secondary}" Offset="0.1" />
