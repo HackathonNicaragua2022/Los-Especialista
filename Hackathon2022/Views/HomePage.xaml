@@ -87,7 +87,9 @@
                 WidthRequest="300"
                 HorizontalOptions="Center"
                 FontSize="{StaticResource DefaultButtonFontSize}"
-                Background="{StaticResource DefaultButtonColor}" />
+                Background="{StaticResource DefaultButtonColor}"
+                Clicked="LoginButton_Clicked"
+                />
 
         </StackLayout>
     </ScrollView>

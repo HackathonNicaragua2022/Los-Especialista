@@ -9,7 +9,6 @@ public partial class MainPage : ContentPage
 
     private void OnCounterClicked(object Sender, EventArgs Args)
     {
-        // SemanticScreenReader.Announce();
     }
 }
 

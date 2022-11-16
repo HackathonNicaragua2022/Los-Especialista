@@ -27,22 +27,28 @@
             Title="Inicio"
             ContentTemplate="{DataTemplate Views:HomePage}"
             Icon="dotnet_bot.svg"
+            Route="Home"
             />
 
         <ShellContent 
             Title="Sesión"
             ContentTemplate="{DataTemplate Views:LoginPage}"
             Icon="icon_login.png"
+            Route="Login"
             />
 
         <ShellContent
             Title="Map"
             ContentTemplate="{DataTemplate Views:GoogleMapPage}"
-            Icon="icon_maps.png" />
+            Icon="icon_maps.png"
+            Route="GoogleMaps"
+            />
 
         <ShellContent
             Title="Sobre Destino"
             ContentTemplate="{DataTemplate Views:AboutPage}"
-            Icon="icon_about.png" />
+            Icon="icon_about.png" 
+            Route="About"
+            />
     </TabBar>
 </Shell>

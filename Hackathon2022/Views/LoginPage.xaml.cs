@@ -1,3 +1,6 @@
+using CommunityToolkit.Maui.Alerts;
+using CommunityToolkit.Maui.Core;
+
 namespace Hackathon2022.Views;
 
 public partial class LoginPage : ContentPage
@@ -20,5 +23,10 @@ public partial class LoginPage : ContentPage
                 Handler.PlatformView.SetPadding(PaddingLeftRight, PaddingTopBottom, PaddingLeftRight, PaddingTopBottom);
             }
         });
+    }
+
+    private async void LoginButton_Clicked(object sender, EventArgs e)
+    {
+        await DisplayAlert("Destino", "Se ha Iniciado sesión", "Aceptar");
     }
 }
