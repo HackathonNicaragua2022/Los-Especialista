@@ -5,4 +5,6 @@
     <x:Double x:Key="PageSpacing">25</x:Double>
     <x:Double x:Key="DefaultButtonFontSize">16</x:Double>
 
+    <Color x:Key="DefaultButtonColor">#FCB707</Color>
+
 </ResourceDictionary>

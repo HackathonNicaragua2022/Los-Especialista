@@ -67,6 +67,12 @@
     </ItemGroup>
 
     <ItemGroup>
+      <Compile Update="Views\HomePage.xaml.cs">
+        <DependentUpon>HomePage.xaml</DependentUpon>
+      </Compile>
+    </ItemGroup>
+
+    <ItemGroup>
         <MauiXaml Update="Resources\Styles\DestinyStyles.xaml">
             <Generator>MSBuild:Compile</Generator>
         </MauiXaml>
@@ -76,8 +82,11 @@
         <MauiXaml Update="Views\GoogleMapPage.xaml">
           <Generator>MSBuild:Compile</Generator>
         </MauiXaml>
-        <MauiXaml Update="Views\LoginPage.xaml">
+        <MauiXaml Update="Views\HomePage.xaml">
             <Generator>MSBuild:Compile</Generator>
+        </MauiXaml>
+        <MauiXaml Update="Views\LoginPage.xaml">
+          <Generator>MSBuild:Compile</Generator>
         </MauiXaml>
     </ItemGroup>
 

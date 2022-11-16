@@ -17,17 +17,28 @@
     </Shell.FlyoutHeader>
 
     <TabBar>
-        <ShellContent
+        <!--<ShellContent
             Title="Página Principal"
             ContentTemplate="{DataTemplate Local:MainPage}"
             Icon="icon_home.png"
-            Route="MainPage" />
+            Route="MainPage" />-->
 
         <ShellContent 
-            Title="Login"
-            ContentTemplate="{DataTemplate Views:LoginPage}"
+            Title="Inicio"
+            ContentTemplate="{DataTemplate Views:HomePage}"
             Icon="dotnet_bot.svg"
             />
+
+        <ShellContent 
+            Title="Sesión"
+            ContentTemplate="{DataTemplate Views:LoginPage}"
+            Icon="icon_login.png"
+            />
+
+        <ShellContent
+            Title="Map"
+            ContentTemplate="{DataTemplate Views:GoogleMapPage}"
+            Icon="icon_maps.png" />
 
         <ShellContent
             Title="Sobre Destino"
