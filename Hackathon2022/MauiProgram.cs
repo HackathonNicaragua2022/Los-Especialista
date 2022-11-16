@@ -1,4 +1,7 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using CommunityToolkit.Maui;
+using CommunityToolkit.Maui.Markup;
+
+using Microsoft.Extensions.Logging;
 
 namespace Hackathon2022;
 
@@ -13,7 +16,9 @@ public static class MauiProgram
             {
                 Fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
                 Fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
-            });
+            })
+            .UseMauiCommunityToolkit()
+            .UseMauiCommunityToolkitMarkup();
 
 #if DEBUG
         Builder.Logging.AddDebug();

@@ -1,46 +1,73 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:Toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
              x:Class="Hackathon2022.Views.LoginPage">
     <ContentPage.Background>
         <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
-            <GradientStop Color="{StaticResource Primary}" Offset="0.1" />
-            <GradientStop Color="{StaticResource Secondary}" Offset="1.0" />
+            <GradientStop Color="{StaticResource Secondary}" Offset="0.1" />
+            <GradientStop Color="{StaticResource Primary}" Offset="1.0" />
         </LinearGradientBrush>
     </ContentPage.Background>
     <ScrollView>
-        <VerticalStackLayout
-            Spacing="{StaticResource PageSpacing}"
-            VerticalOptions="Center">
+        <StackLayout Orientation="Vertical"
+                     Spacing="{StaticResource PageSpacing}"
+                     VerticalOptions="Start"
+                     Padding="0,30,0,0">
 
-            <Image
-                Source="destiny_logo.jpeg"
-                Margin="0,-20,0,0"
-                VerticalOptions="Start"
-                HorizontalOptions="Center" />
+            <Image Source="destiny_logo.svg"
+                   WidthRequest="150"
+                   VerticalOptions="Start"
+                   HorizontalOptions="Center"
+                   InputTransparent="True">
+                <Image.Behaviors>
+                    <Toolkit:IconTintColorBehavior TintColor="#FF021401" />
+                </Image.Behaviors>
+            </Image>
 
             <Label
                 Text="Destino"
                 SemanticProperties.HeadingLevel="Level1"
                 FontSize="32"
+                FontAttributes="Bold"
+                Margin="0,0,0,-25"
                 HorizontalOptions="Center" />
+
+            <Path Data="M 0,30 L 40,0 L 100,0"
+                  Stroke="#FCB707"
+                  StrokeThickness="5"
+                  Aspect="Fill"
+                  Margin="40,0,40,0"
+                  HorizontalOptions="Center" />
 
             <Label
                 Text="Con vos a todas partes"
-                FontSize="18" HorizontalTextAlignment="Center"
+                FontSize="24"
+                FontAttributes="Bold"
+                Margin="0,-30,0,0"
+                HorizontalTextAlignment="Center"
                 HorizontalOptions="Fill" />
 
             <Button
                 x:Name="RegisterButton"
                 Text="Regístrate"
-                HorizontalOptions="Center" />
+                FontAttributes="Bold"
+                WidthRequest="300"
+                Margin="0,60,0,0"
+                HorizontalOptions="Center"
+                FontSize="{StaticResource DefaultButtonFontSize}"
+                Background="{StaticResource Tertiary}" />
 
             <Button
                 x:Name="LoginButton"
                 Text="Inicia Sesión"
-                HorizontalOptions="Center" />
+                FontAttributes="Bold"
+                WidthRequest="300"
+                HorizontalOptions="Center"
+                FontSize="{StaticResource DefaultButtonFontSize}"
+                Background="{StaticResource Tertiary}" />
 
-        </VerticalStackLayout>
+        </StackLayout>
     </ScrollView>
 
 </ContentPage>
