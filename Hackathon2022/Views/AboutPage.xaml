@@ -34,7 +34,7 @@
             <Label Text="Detalles del producto:" Margin="0,10,0,0" />
             <Label Margin="10,10,0,0">
                 <Label.Text>
-                    Aplicación para llevar un seguimiento en tiempo real de los lugares más populares de cada departamento de Nicaragua y como llegar a ellos usan cualquier transporte público.
+                    Aplicación para llevar un seguimiento en tiempo real las rutas (transporte público) de cada departamento de Nicaragua, tener en nuestras manos el control y momento de cuando tomaremos el transporte público sin tener que estar haciendo las antiguas esperas eternas.
                 </Label.Text>
             </Label>
             <Label Margin="0,10,0,0">

@@ -7,16 +7,16 @@ EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
 WORKDIR /src
-COPY ["DestinyBackend.csproj", "."]
-RUN dotnet restore "./DestinyBackend.csproj"
+COPY ["HackathonBackend.csproj", "."]
+RUN dotnet restore "./HackathonBackend.csproj"
 COPY . .
 WORKDIR "/src/."
-RUN dotnet build "DestinyBackend.csproj" -c Release -o /app/build
+RUN dotnet build "HackathonBackend.csproj" -c Release -o /app/build
 
 FROM build AS publish
-RUN dotnet publish "DestinyBackend.csproj" -c Release -o /app/publish /p:UseAppHost=false
+RUN dotnet publish "HackathonBackend.csproj" -c Release -o /app/publish /p:UseAppHost=false
 
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-ENTRYPOINT ["dotnet", "DestinyBackend.dll"]
+ENTRYPOINT ["dotnet", "HackathonBackend.dll"]
