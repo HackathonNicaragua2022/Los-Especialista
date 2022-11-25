@@ -3,6 +3,13 @@
     "apis1": {
       "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/Microsoft.ApiManagement/service/HackathonBackendapi/apis/HackathonBackend",
       "type": "apis.azure"
+    },
+    "mssql1": {
+      "secretStore": "AzureAppSettings",
+      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/Microsoft.Sql/servers/hackathonbackenddbserver/databases/HackathonBackend_db",
+      "type": "mssql.azure",
+      "connectionId": "DestinoConnectionStrings",
+      "dynamicId": null
     }
   }
 }
