@@ -28,55 +28,6 @@
         </Grid>
     </Shell.TitleView>
     <Grid>
-        <Maps:Map x:Name="Mappy" IsShowingUser="True" IsTrafficEnabled="True" IsZoomEnabled="True">
-            <Maps:Map.MapElements>
-                <Maps:Polygon StrokeColor="#FF9900" StrokeWidth="8" FillColor="#88FF9900">
-                    <Maps:Polygon.Geopath>
-                        <Loc:Location>
-                            <x:Arguments>
-                                <!-- Managua -->
-                                <x:Double>12.13282</x:Double>
-                                <x:Double>-86.2504</x:Double>
-                            </x:Arguments>
-                        </Loc:Location>
-                        <Loc:Location>
-                            <x:Arguments>
-                                <!-- León -->
-                                <x:Double>12.43787</x:Double>
-                                <x:Double>-86.87804</x:Double>
-                            </x:Arguments>
-                        </Loc:Location>
-                        <Loc:Location>
-                            <x:Arguments>
-                                <!-- Granada -->
-                                <x:Double>11.92988</x:Double>
-                                <x:Double>-85.95602</x:Double>
-                            </x:Arguments>
-                        </Loc:Location>
-                        <Loc:Location>
-                            <x:Arguments>
-                                <!-- Masaya -->
-                                <x:Double>11.97444</x:Double>
-                                <x:Double>-86.09417</x:Double>
-                            </x:Arguments>
-                        </Loc:Location>
-                        <Loc:Location>
-                            <x:Arguments>
-                                <!-- Chinandega -->
-                                <x:Double>12.62937</x:Double>
-                                <x:Double>-87.13105</x:Double>
-                            </x:Arguments>
-                        </Loc:Location>
-                        <Loc:Location>
-                            <x:Arguments>
-                                <!-- Matagalpa -->
-                                <x:Double>12.92559</x:Double>
-                                <x:Double>-85.91747</x:Double>
-                            </x:Arguments>
-                        </Loc:Location>
-                    </Maps:Polygon.Geopath>
-                </Maps:Polygon>
-            </Maps:Map.MapElements>
-        </Maps:Map>
+        <Maps:Map x:Name="Mappy" IsShowingUser="True" IsTrafficEnabled="True" IsZoomEnabled="True" />
     </Grid>
 </ContentPage>
