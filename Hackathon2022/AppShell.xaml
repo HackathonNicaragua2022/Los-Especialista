@@ -30,6 +30,12 @@
             Route="Home" />
 
         <ShellContent
+            Title="Favoritos"
+            Icon="favorite.png"
+            ContentTemplate="{DataTemplate Views:FavoritePage}"
+            Route="Favorite" />
+        
+        <ShellContent
             Title="Map"
             Icon="icon_maps.png"
             ContentTemplate="{DataTemplate Views:GoogleMapPage}"

@@ -8,4 +8,5 @@
     <x:Double x:Key="DefaultButtonFontSize">16</x:Double>
 
     <Color x:Key="DefaultButtonColor">#FCB707</Color>
+    <Color x:Key="DefaultDisabledButtonColor">#F8E1A9</Color>
 </ResourceDictionary>

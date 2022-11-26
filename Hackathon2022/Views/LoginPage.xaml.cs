@@ -27,6 +27,6 @@ public partial class LoginPage : ContentPage
 
     private async void LoginButton_Clicked(object sender, EventArgs e)
     {
-        await DisplayAlert("Destino", "Se ha Iniciado sesión", "Aceptar");
+        await App.Current.MainPage.DisplayAlert("Destino", "Se ha Iniciado sesión", "Aceptar");
     }
 }

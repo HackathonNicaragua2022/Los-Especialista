@@ -21,6 +21,7 @@ public partial class AppShell : Shell
     {
         Routes.Add("Home", typeof(HomePage));
         Routes.Add("Login", typeof(LoginPage));
+        Routes.Add("Favorite", typeof(FavoritePage));
         Routes.Add("GoogleMaps", typeof(GoogleMapPage));
         Routes.Add("About", typeof(AboutPage));
 

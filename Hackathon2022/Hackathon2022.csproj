@@ -63,14 +63,12 @@
     <ItemGroup>
         <PackageReference Include="CommunityToolkit.Maui" Version="3.0.0" />
         <PackageReference Include="CommunityToolkit.Maui.Markup" Version="2.0.0" />
+        <PackageReference Include="CommunityToolkit.Mvvm" Version="8.0.0" />
+        <PackageReference Include="Microsoft.AspNetCore.Identity" Version="2.2.0" />
         <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="7.0.0" />
         <PackageReference Include="Microsoft.Maui.Controls.Maps" Version="7.0.49" />
         <PackageReference Include="Microsoft.Maui.Maps" Version="7.0.49" />
         <PackageReference Include="Newtonsoft.Json" Version="13.0.2" />
-    </ItemGroup>
-
-    <ItemGroup>
-        <Folder Include="ViewModels\" />
     </ItemGroup>
 
     <ItemGroup>
@@ -80,6 +78,9 @@
     </ItemGroup>
 
     <ItemGroup>
+        <MauiXaml Update="Controls\CustomActivityIndicator.xaml">
+          <Generator>MSBuild:Compile</Generator>
+        </MauiXaml>
         <MauiXaml Update="Controls\FlyoutFooter.xaml">
           <Generator>MSBuild:Compile</Generator>
         </MauiXaml>
@@ -91,6 +92,9 @@
         </MauiXaml>
         <MauiXaml Update="Views\AboutPage.xaml">
             <Generator>MSBuild:Compile</Generator>
+        </MauiXaml>
+        <MauiXaml Update="Views\FavoritePage.xaml">
+          <Generator>MSBuild:Compile</Generator>
         </MauiXaml>
         <MauiXaml Update="Views\GoogleMapPage.xaml">
           <Generator>MSBuild:Compile</Generator>

@@ -1,20 +1,101 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:Controls="clr-namespace:Hackathon2022.Controls"
+             xmlns:ViewModels="clr-namespace:Hackathon2022.ViewModels"
              x:Class="Hackathon2022.Views.RegisterPage"
              Title="Registro">
-    <ContentPage.Background>
+    <!--<ContentPage.Background>
         <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
             <GradientStop Color="{StaticResource Secondary}" Offset="0.1" />
             <GradientStop Color="{StaticResource Primary}" Offset="1.0" />
         </LinearGradientBrush>
-    </ContentPage.Background>
+    </ContentPage.Background>-->
+
+    <ContentPage.BindingContext>
+        <ViewModels:RegisterViewModel />
+    </ContentPage.BindingContext>
+
     <ScrollView>
-        <VerticalStackLayout>
-            <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-        </VerticalStackLayout>
+        <Grid>
+            <VerticalStackLayout WidthRequest="300">
+                <VerticalStackLayout.Resources>
+                    <Style TargetType="Label">
+                        <Setter Property="HorizontalOptions" Value="Start" />
+                        <Setter Property="WidthRequest" Value="300" />
+                    </Style>
+
+                    <Style TargetType="Entry">
+                        <Setter Property="HorizontalOptions" Value="Start" />
+                        <Setter Property="WidthRequest" Value="300" />
+                    </Style>
+
+                    <Style TargetType="Button">
+                        <Setter Property="HorizontalOptions" Value="Start" />
+                        <Setter Property="WidthRequest" Value="300" />
+                    </Style>
+                </VerticalStackLayout.Resources>
+
+                <Label Grid.Row="0"
+                    Text="Nuevo Usuario" FontSize="30" FontAttributes="Bold"
+                    Margin="0,25,0,15"
+                    HorizontalOptions="CenterAndExpand"
+                    WidthRequest="230" />
+
+                <Label Grid.Row="1" Text="Nombre de Usuario"
+                       Margin="0,15,0,0" />
+                <Entry Grid.Row="2"
+                    FontSize="18"
+                    Placeholder="Fulano de tal"
+                    Margin="0,0,0,5"
+                    HorizontalOptions="Center"
+                    WidthRequest="300"
+                    Text="{Binding UserName}" />
+
+                <Label Grid.Row="3" Text="Contraseña"
+                       Margin="0,15,0,0" />
+                <Entry Grid.Row="4"
+                    FontSize="18"
+                    Placeholder="##$$@#"
+                    Margin="0,0,0,5"
+                    HorizontalOptions="Center"
+                    WidthRequest="300" 
+                    IsPassword="True"
+                    Text="{Binding Password}" />
+
+                <Label Grid.Row="5" Text="Correo"
+                       Margin="0,15,0,0" />
+                <Entry Grid.Row="6"
+                    FontSize="18"
+                    Placeholder="Hackaton@gmail.com"
+                    Margin="0,0,0,10"
+                    HorizontalOptions="Center"
+                    WidthRequest="300"
+                    Text="{Binding Email}" />
+
+                <Button Grid.Row="7"
+                    Text="Registrar"
+                    TextColor="Black"
+                    FontAttributes="Bold"
+                    WidthRequest="300"
+                    Margin="0,20,0,0"
+                    HorizontalOptions="Center"
+                    IsEnabled="{Binding IsValid}"
+                    FontSize="{StaticResource DefaultButtonFontSize}"
+                    Background="{StaticResource DefaultButtonColor}"
+                    Command="{Binding RegisterUserCommand}">
+                    <Button.Triggers>
+                        <DataTrigger TargetType="Button"
+                                         Binding="{Binding IsValid}"
+                                         Value="False">
+                            <Setter Property="Background" Value="{StaticResource DefaultDisabledButtonColor}" />
+                        </DataTrigger>
+                    </Button.Triggers>
+                </Button>
+            </VerticalStackLayout>
+
+            <Controls:CustomActivityIndicator IsVisible="{Binding IsVisible}" />
+        </Grid>
     </ScrollView>
 </ContentPage>
+    
