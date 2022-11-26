@@ -5,7 +5,7 @@
              xmlns:Maps="clr-namespace:Microsoft.Maui.Controls.Maps;assembly=Microsoft.Maui.Controls.Maps"
              xmlns:Loc="clr-namespace:Microsoft.Maui.Devices.Sensors;assembly=Microsoft.Maui.Essentials"
              x:Class="Hackathon2022.Views.GoogleMapPage">
-    <Shell.TitleView>
+    <!--<Shell.TitleView>
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto" />
@@ -24,7 +24,7 @@
 
             <Label Grid.Column="1" FontSize="24" TextColor="White" Margin="10,0,0,0" Text="Mapa" HorizontalOptions="Start" VerticalOptions="Center" />
         </Grid>
-    </Shell.TitleView>
+    </Shell.TitleView>-->
     <Grid>
         <Maps:Map x:Name="Mappy" IsShowingUser="True" IsTrafficEnabled="True">
             <Maps:Map.MapElements>

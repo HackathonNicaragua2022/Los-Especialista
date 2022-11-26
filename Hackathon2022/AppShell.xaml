@@ -4,51 +4,48 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:Local="clr-namespace:Hackathon2022"
+    xmlns:Controls="clr-namespace:Hackathon2022.Controls"
     xmlns:Views="clr-namespace:Hackathon2022.Views"
-    Shell.FlyoutBehavior="Disabled">
+    FlyoutHeaderBehavior="CollapseOnScroll">
+
+    <Shell.Resources>
+        <Style x:Key="AboutShell" TargetType="Element">
+            <Setter Property="Shell.BackgroundColor" Value="{StaticResource Tertiary}" />
+        </Style>
+    </Shell.Resources>
 
     <Shell.FlyoutHeader>
-        <Label Margin="{OnPlatform Default='0,0,0,12', iOS='0', MacCatalyst='0'}"
-               Padding="{OnPlatform Default='4,0', iOS='4, 100, 4, 0', MacCatalyst='4, 100, 4, 0'}"
-               FontSize="24"
-               HorizontalTextAlignment="Start"
-               Text="Toolkit Features"
-               VerticalTextAlignment="Center" />
+        <Controls:FlyoutHeader />
     </Shell.FlyoutHeader>
 
-    <TabBar>
-        <!--<ShellContent
-            Title="Página Principal"
-            ContentTemplate="{DataTemplate Local:MainPage}"
-            Icon="icon_home.png"
-            Route="MainPage" />-->
+    <Shell.FlyoutFooter>
+        <Controls:FlyoutFooter />
+    </Shell.FlyoutFooter>
 
+    <FlyoutItem Route="MainMenu" FlyoutDisplayOptions="AsMultipleItems">
         <ShellContent 
             Title="Inicio"
-            ContentTemplate="{DataTemplate Views:HomePage}"
             Icon="dotnet_bot.svg"
-            Route="Home"
-            />
-
-        <ShellContent 
-            Title="Sesión"
-            ContentTemplate="{DataTemplate Views:LoginPage}"
-            Icon="icon_login.png"
-            Route="Login"
-            />
+            ContentTemplate="{DataTemplate Views:HomePage}"
+            Route="Home" />
 
         <ShellContent
             Title="Map"
-            ContentTemplate="{DataTemplate Views:GoogleMapPage}"
             Icon="icon_maps.png"
-            Route="GoogleMaps"
-            />
+            ContentTemplate="{DataTemplate Views:GoogleMapPage}"
+            Route="GoogleMaps" />
+    </FlyoutItem>
 
-        <ShellContent
-            Title="Sobre Destino"
-            ContentTemplate="{DataTemplate Views:AboutPage}"
-            Icon="icon_about.png" 
+    <ShellContent
             Route="About"
-            />
-    </TabBar>
+            Style="{StaticResource AboutShell}"
+            Title="Sobre Destino"
+            Icon="info.png"
+            ContentTemplate="{DataTemplate Views:AboutPage}" />
+
+    <MenuItem
+            Text="Ayuda"
+            IconImageSource="help.png"
+            Command="{Binding HelpCommand}"
+            CommandParameter="https://docs.microsoft.com/dotnet/maui/fundamentals/shell" />
 </Shell>

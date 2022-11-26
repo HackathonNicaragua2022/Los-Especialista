@@ -6,6 +6,8 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using HackathonBackend.Models;
+using Microsoft.AspNetCore.Identity;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace HackathonBackend.Controllers;
 
@@ -30,6 +32,26 @@ public class UsersController : ControllerBase
         }
 
         return await Database.Users.ToListAsync();
+    }
+
+    // GET: api/Users/Find/{UserNameOrEmail}
+    [HttpGet("Find/{UserNameOrEmail}")]
+    public async Task<ActionResult<User>> GetUser(string UserNameOrEmail)
+    {
+        if (Database.Users == null)
+        {
+            return NotFound();
+        }
+
+        var Query = await Database.Users
+            .FirstOrDefaultAsync(User => User.UserName == UserNameOrEmail || User.Email == UserNameOrEmail);
+
+        if (Query == null)
+        {
+            return NotFound();
+        }
+
+        return Query;
     }
 
     // GET: api/Users/5
@@ -91,6 +113,8 @@ public class UsersController : ControllerBase
         {
             return Problem("Entity set 'DestinyContext.Users'  is null.");
         }
+
+        User.Password = new PasswordHasher<object>().HashPassword(null, User.Password);
 
         Database.Users.Add(User);
         await Database.SaveChangesAsync();

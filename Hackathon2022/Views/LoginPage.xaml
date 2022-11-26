@@ -2,8 +2,9 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:Toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
-             x:Class="Hackathon2022.Views.LoginPage">
-    <Shell.TitleView>
+             x:Class="Hackathon2022.Views.LoginPage"
+             Title="Iniciar Sesión">
+    <!--<Shell.TitleView>
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto" />
@@ -22,7 +23,7 @@
 
             <Label Grid.Column="1" FontSize="24" TextColor="White" Margin="10,0,0,0" Text="Login" HorizontalOptions="Start" VerticalOptions="Center" />
         </Grid>
-    </Shell.TitleView>
+    </Shell.TitleView>-->
     <ContentPage.Background>
         <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
             <GradientStop Color="{StaticResource Secondary}" Offset="0.1" />

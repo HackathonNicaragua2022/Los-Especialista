@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:Toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
              x:Class="Hackathon2022.Views.HomePage">
-    <Shell.TitleView>
+    <!--<Shell.TitleView>
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto" />
@@ -22,7 +22,7 @@
 
             <Label Grid.Column="1" FontSize="24" TextColor="White" Margin="10,0,0,0" Text="Inicio" HorizontalOptions="Start" VerticalOptions="Center" />
         </Grid>
-    </Shell.TitleView>
+    </Shell.TitleView>-->
     <ContentPage.Background>
         <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
             <GradientStop Color="{StaticResource Secondary}" Offset="0.1" />
@@ -76,6 +76,7 @@
                 WidthRequest="300"
                 Margin="0,60,0,0"
                 HorizontalOptions="Center"
+                Clicked="RegisterButton_Clicked"
                 FontSize="{StaticResource DefaultButtonFontSize}"
                 Background="{StaticResource DefaultButtonColor}" />
 
@@ -88,8 +89,7 @@
                 HorizontalOptions="Center"
                 FontSize="{StaticResource DefaultButtonFontSize}"
                 Background="{StaticResource DefaultButtonColor}"
-                Clicked="LoginButton_Clicked"
-                />
+                Clicked="LoginButton_Clicked" />
 
         </StackLayout>
     </ScrollView>

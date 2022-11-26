@@ -9,6 +9,11 @@ public partial class HomePage : ContentPage
 
     private async void LoginButton_Clicked(object sender, EventArgs e)
     {
-        await Shell.Current.GoToAsync("//Login");
+        await Navigation.PushAsync(new LoginPage(), true);
+    }
+
+    private async void RegisterButton_Clicked(object sender, EventArgs e)
+    {
+        await Navigation.PushAsync(new RegisterPage(), true);
     }
 }

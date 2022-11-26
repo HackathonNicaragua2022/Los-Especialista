@@ -15,6 +15,7 @@ public static class MauiProgram
             .UseMauiMaps()
             .ConfigureFonts(Fonts =>
             {
+                Fonts.AddFont("fa_solid.ttf", "FontAwesome");
                 Fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
                 Fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
             })
