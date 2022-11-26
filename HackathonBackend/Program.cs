@@ -1,32 +1,26 @@
-using HackathonBackend;
+namespace HackathonBackend;
 
-using Microsoft.Azure;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Options;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
 
-var Builder = WebApplication.CreateBuilder(args);
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
-// Add services to the container.
-
-Builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-Builder.Services.AddEndpointsApiExplorer();
-Builder.Services.AddSwaggerGen();
-Builder.Services.AddDbContext<DestinyContext>();
-
-var App = Builder.Build();
-
-// Configure the HTTP request pipeline.
-if (App.Environment.IsDevelopment())
+public class Program
 {
-    App.UseSwagger();
-    App.UseSwaggerUI();
+    public static void Main(string[] Args)
+    {
+        CreateHostBuilder(Args).Build().Run();
+    }
+
+    public static IHostBuilder CreateHostBuilder(string[] Args) =>
+        Host.CreateDefaultBuilder(Args)
+            .ConfigureWebHostDefaults(WebBuilder =>
+            {
+                WebBuilder.UseStartup<Startup>();
+            });
 }
-
-App.UseHttpsRedirection();
-
-App.UseAuthorization();
-
-App.MapControllers();
-
-App.Run();
