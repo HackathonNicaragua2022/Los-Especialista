@@ -18,7 +18,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using Microsoft.Maui.Controls;
+using Xamarin.Google.Crypto.Tink.Proto;
 
 public class CustomPin : Pin
 {
@@ -32,7 +33,19 @@ public class CustomPin : Pin
         set => SetValue(ImageSourceProperty, value);
     }
 
+    public object? Tag { get; set; }
+
     public Microsoft.Maui.Maps.IMap? Map { get; set; }
+
+    public override bool Equals(object? Pin)
+    {
+        return Pin is CustomPin P ? P.Tag == Tag : false;
+    }
+
+    public override int GetHashCode()
+    {
+        return Tag?.GetHashCode() ?? 0;
+    }
 
     static async void OnImageSourceChanged(BindableObject Bindable, object OldValue, object NewValue)
     {
@@ -122,7 +135,14 @@ public class CustomMapHandler : MapHandler
 
                 if (Pin is CustomPin _CustomPin)
                 {
-                    var ImageSourceHandler = new ImageLoaderSourceHandler();
+                    IImageSourceHandler ImageSourceHandler = _CustomPin.ImageSource switch
+                    {
+                        FileImageSource => new FileImageSourceHandler(),
+                        StreamImageSource => new StreamImagesourceHandler(),
+                        UriImageSource => new ImageLoaderSourceHandler(),
+                        _ => throw new NotImplementedException()
+                    };
+
                     var Bitmap = await ImageSourceHandler.LoadImageAsync(_CustomPin.ImageSource, Android.App.Application.Context);
                     MarkerOption?.SetIcon(Bitmap is null
                         ? BitmapDescriptorFactory.DefaultMarker()
