@@ -114,7 +114,7 @@ public class UsersController : ControllerBase
             return Problem("Entity set 'DestinyContext.Users'  is null.");
         }
 
-        User.Password = new PasswordHasher<object>().HashPassword(null, User.Password);
+        // User.Password = new PasswordHasher<object>().HashPassword(null, User.Password);
 
         Database.Users.Add(User);
         await Database.SaveChangesAsync();

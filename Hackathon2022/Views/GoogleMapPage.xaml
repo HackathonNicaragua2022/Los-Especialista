@@ -28,7 +28,7 @@
         </Grid>
     </Shell.TitleView>
     <Grid>
-        <Maps:Map x:Name="Mappy" IsShowingUser="True" IsTrafficEnabled="True">
+        <Maps:Map x:Name="Mappy" IsShowingUser="True" IsTrafficEnabled="True" IsZoomEnabled="True">
             <Maps:Map.MapElements>
                 <Maps:Polygon StrokeColor="#FF9900" StrokeWidth="8" FillColor="#88FF9900">
                     <Maps:Polygon.Geopath>

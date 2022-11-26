@@ -55,20 +55,29 @@ public partial class LoginViewModel
             string ResponseBody = await Response.Content.ReadAsStringAsync();
             var User = JsonConvert.DeserializeObject<User>(ResponseBody);
 
-            var HashPassword = new PasswordHasher<object>().HashPassword(null, Password ?? string.Empty);
-            var PasswordVerificationResult = new PasswordHasher<object>().VerifyHashedPassword(null, User.Password, HashPassword);
+            //var HashPassword = new PasswordHasher<object>().HashPassword(null, Password ?? string.Empty);
+            //var PasswordVerificationResult = new PasswordHasher<object>().VerifyHashedPassword(null, User.Password, HashPassword);
 
-            switch (PasswordVerificationResult)
+            //switch (PasswordVerificationResult)
+            //{
+            //    case PasswordVerificationResult.Success:
+            //    case PasswordVerificationResult.SuccessRehashNeeded:
+            //        IsVisible = false;
+            //        LoginStatus.User = User;
+            //        await Shell.Current.GoToAsync("//GoogleMaps");
+            //        break;
+            //}
+
+            if (Password == User.Password)
             {
-                case PasswordVerificationResult.Success:
-                case PasswordVerificationResult.SuccessRehashNeeded:
-                    IsVisible = false;
-                    LoginStatus.User = User;
-                    await Shell.Current.GoToAsync("//GoogleMaps");
-                    break;
+                IsVisible = false;
+                LoginStatus.User = User;
+                await Shell.Current.GoToAsync("//GoogleMaps");
             }
-
-            throw new InvalidOperationException();
+            else
+            {
+                throw new InvalidOperationException();
+            }
         }
         catch (Exception Ex)
         {
